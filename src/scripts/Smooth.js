@@ -93,12 +93,7 @@ export default class extends Core {
         this.instance.limit.y = this.el.offsetHeight - this.windowHeight;
 
         if (this.direction === 'horizontal') {
-            let totalWidth = 0;
-            let nodes = this.el.children;
-            for (let i = 0; i < nodes.length; i++) {
-                totalWidth += nodes[i].offsetWidth;
-            }
-
+            let totalWidth = this.el.getBoundingClientRect().width;
             this.instance.limit.x = totalWidth - this.windowWidth;
         }
     }
