@@ -2136,13 +2136,7 @@
         this.instance.limit.y = this.el.offsetHeight - this.windowHeight;
 
         if (this.direction === 'horizontal') {
-          var totalWidth = 0;
-          var nodes = this.el.children;
-
-          for (var i = 0; i < nodes.length; i++) {
-            totalWidth += nodes[i].offsetWidth;
-          }
-
+          var totalWidth = this.el.getBoundingClientRect().width;
           this.instance.limit.x = totalWidth - this.windowWidth;
         }
       }
